@@ -1,0 +1,59 @@
+// Disable user selection on elements;
+@mixin no-user-select {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+$sprite: sprite-map("sprites/**/*.png", $spacing: 50);
+$sprite-background: sprite-url($sprite);
+
+@mixin sprite-background-image($selector, $setWidth: false, $offset-x: 0, $offset-y: 0, $setHeight: false) {
+    background-image: $sprite-background;
+    background-position: sprite-position($sprite, $selector, $offset-x, $offset-y);
+    background-repeat: no-repeat;
+    @if $setHeight {
+        height: image-height(sprite-file($sprite, $selector));
+    }
+    @if $setWidth {
+        width: image-width(sprite-file($sprite, $selector));
+    }
+}
+
+@mixin sprite-background-position($selector, $offset-x: 0, $offset-y: 0) {
+    background-position: sprite-position($sprite, $selector, $offset-x, $offset-y);
+}
+
+@mixin animate-transition($transition: all, $duration: 200ms, $timing: ease, $delay: 0s) {
+  -moz-transition: $transition $duration $timing $delay;
+  -ms-transition: $transition $duration $timing $delay;
+  -webkit-transition: $transition $duration $timing $delay;
+  transition: $transition $duration $timing $delay;
+}
+
+@mixin keyframes($animation_name) {
+  @-webkit-keyframes $animation_name {
+    @content;
+  }
+  @-moz-keyframes $animation_name {
+    @content;
+  }
+  @-ms-keyframes $animation_name {
+    @content;
+  }
+  @-o-keyframes $animation_name {
+    @content;
+  }
+  @keyframes $animation_name {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+  -moz-animation: #{$str};
+  -ms-animation: #{$str};
+  -o-animation: #{$str};
+  animation: #{$str};
+}
+
