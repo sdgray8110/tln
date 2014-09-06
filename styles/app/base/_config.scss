@@ -1,7 +1,9 @@
-$blue: #324c65;
-$grayfont: #666666;
+/* Breakpoints */
+$bp-small : min-width 480px;
+$bp-small-plus : min-width 650px;
+$bp-medium : min-width 769px;
+$bp-large : min-width 960px;
 
-$bluegradient: linear-gradient(#324b65, #1a2f42);
-$reversebluegradient: linear-gradient(#1a2f42, #324b65);
-
-$goldengradient: linear-gradient(#d9aa5c, #c79e4d);
+/* Color Variables */
+$beige: #f5f5f5;
+$purple: #360b6b;

@@ -4,14 +4,18 @@
  * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
 
 @import "compass";
-@media screen {
-  @import "base/reset.scss";
-  @import "base/config.scss";
-  @import "base/global.scss";
-  @import "base/mixins.scss";
+@import "breakpoint";
 
-  // global
-  @import "header.scss";
-  @import "footer.scss";
-  @import "primary_navigation.scss";
+
+@media screen {
+    @import "mixins/mixins.scss";
+    @import "base/webfonts.scss";
+    @import "base/reset.scss";
+    @import "base/config.scss";
+    @import "base/global.scss";
+
+    // global
+    @import "header.scss";
+    @import "footer.scss";
+    @import "primary_navigation.scss";
 }

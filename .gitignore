@@ -1,0 +1,6 @@
+/images/sprites-*.png
+/styles/stylesheets
+.idea/
+.idea/*.xml
+.sass-cache
+Gemfile.lock
