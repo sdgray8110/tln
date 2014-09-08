@@ -15,9 +15,6 @@
     h1 {
         text-indent: -9999px;
         @include sprite-background-image('header-logo', true, 0, 0, true);
-        background-size: 164px;
-        width: 164px;
-        height: 69px;
         position: absolute;
         top: 0;
         left: 0;
