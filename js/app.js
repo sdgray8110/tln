@@ -9,7 +9,9 @@ require.config({
     baseUrl: 'js',
     paths: {
         // Core Libraries
-        jquery:    'lib/jquery-1.11.1.min'
+        jquery: 'lib/jquery-1.11.1.min',
+        mustache: 'lib/mustache',
+        serializeObject: 'lib/serializeObject'
     }
 }); // end require.config
 
@@ -19,6 +21,14 @@ define(['jquery'], function($) {
 
         return Global;
     });
+
+    require(['mustache'], function(Mustache) {
+        window.Mustache = Mustache;
+
+        return Mustache;
+    });
+
+    require(['serializeObject']);
 
     return $;
 });

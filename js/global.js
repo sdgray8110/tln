@@ -27,7 +27,7 @@ define('global', function(require) {
 
                 if (len) {
                     for (var i = 0; i < len; i++) {
-                        console.log(modules[i]);
+                        require(['modules/' + modules[i]]);
                     }
                 }
             },
