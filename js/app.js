@@ -13,11 +13,12 @@ require.config({
     }
 }); // end require.config
 
-require(['jquery'], function($) {
-    return $;
-});
-require(['global'], function(Global) {
-    Global.init();
+define(['jquery'], function($) {
+    require(['global'], function(Global) {
+        Global.init();
 
-    return Global;
+        return Global;
+    });
+
+    return $;
 });
