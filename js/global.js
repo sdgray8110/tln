@@ -1,7 +1,7 @@
 define('global', function(require) {
     'use strict';
 
-    var Global = (function() {
+    return (function() {
         var self = {
 
             cacheDom: function() {
@@ -16,19 +16,22 @@ define('global', function(require) {
             },
 
             init: function() {
-                self.loadModules();
+                self.loadComponents();
                 self.cacheDom();
                 self.attachHandlers();
             },
 
-            loadModules: function() {
-                var modules = JSON.parse(document.getElementById('js_modules').innerText),
-                    len = modules.length;
+            loadComponents: function() {
+                var components = JSON.parse(document.getElementById('js_components').innerText),
+                    len = components.length,
+                    names = [];
 
                 if (len) {
                     for (var i = 0; i < len; i++) {
-                        require(['modules/' + modules[i]]);
+                        names.push('components/' + components[i]);
                     }
+
+                    return require(names);
                 }
             },
 
@@ -47,6 +50,4 @@ define('global', function(require) {
 
         return self;
     })();
-
-    return Global;
 });

@@ -9,6 +9,7 @@ require.config({
     baseUrl: 'js',
     paths: {
         // Core Libraries
+        'async': 'lib/require_async',
         jquery: 'lib/jquery-1.11.1.min',
         mustache: 'lib/mustache',
         serializeObject: 'lib/serializeObject'
@@ -19,16 +20,8 @@ define(['jquery'], function($) {
     require(['global'], function(Global) {
         Global.init();
 
-        return Global;
+        window.global = Global;
     });
-
-    require(['mustache'], function(Mustache) {
-        window.Mustache = Mustache;
-
-        return Mustache;
-    });
-
-    require(['serializeObject']);
 
     return $;
 });
